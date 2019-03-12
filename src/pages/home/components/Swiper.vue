@@ -2,10 +2,10 @@
 <div class="wrapper">
     <swiper :options="swiperOption">
     <swiper-slide>
-        <img class="swiper-img" src="~@/image/1.jpg"><img>
+        <img class="swiper-img" src="~@/assets/image/1.jpg"><img>
     </swiper-slide>
     <swiper-slide>
-         <img class="swiper-img" src="~@/image/2.jpg"><img>
+         <img class="swiper-img" src="~@/assets/image/2.jpg"><img>
     </swiper-slide>
     <div class="swiper-pagination"  slot="pagination">
     </div>
