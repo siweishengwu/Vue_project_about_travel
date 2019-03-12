@@ -1,11 +1,8 @@
 <template>
 <div class="wrapper">
     <swiper :options="swiperOption">
-    <swiper-slide>
-        <img class="swiper-img" src="~@/assets/image/1.jpg"><img>
-    </swiper-slide>
-    <swiper-slide>
-         <img class="swiper-img" src="~@/assets/image/2.jpg"><img>
+    <swiper-slide v-for="item of swiperList" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl"><img>
     </swiper-slide>
     <div class="swiper-pagination"  slot="pagination">
     </div>
@@ -20,7 +17,14 @@ export default {
             swiperOption:{
                 pagination: '.swiper-pagination',
                 loop: true
-            }
+            },
+            swiperList:[{
+                id:'0001',
+                imgUrl:`/static/image/1.jpg`
+            },{
+                id:'0002',
+                imgUrl:`/static/image/2.jpg`,
+            }]
         }
     }
 }
