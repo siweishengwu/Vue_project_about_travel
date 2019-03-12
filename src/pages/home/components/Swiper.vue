@@ -14,12 +14,12 @@
 </template>
 <script>
 export default {
-    name:'HomeSwiper',
+    name: 'HomeSwiper',
     data () {
         return{
             swiperOption:{
-                pagination:'.swiper-pagination',
-                loop:true
+                pagination: '.swiper-pagination',
+                loop: true
             }
         }
     }
