@@ -11,7 +11,6 @@
                 <div class="item-info">
                   <p class="item-title">{{item.title}}</p>
                   <p class="item-desc">{{item.desc}}</p>
-                  <button class="item-button">查看详情</button>
                 </div>
             </li>
         </ul>
@@ -25,22 +24,17 @@ export default {
     return {
     recommendList: [{
       id: '0001',
-      imgUrl: `/static/image/r_1.jpg`,
+      imgUrl: `/static/image/w_1.jpg`,
       title: '深圳野生动物园',
       desc: '这里有优雅和呆萌并存的睫毛精'
     },{
       id: '0002',
-      imgUrl: `/static/image/r_1.jpg`,
+      imgUrl: `/static/image/w_1.jpg`,
       title: '深圳野生动物园',
       desc: '这里有优雅和呆萌并存的睫毛精'
     },{
       id: '0003',
-      imgUrl: `/static/image/r_1.jpg`,
-      title: '深圳野生动物园',
-      desc: '这里有优雅和呆萌并存的睫毛精'
-    },{
-      id: '0004',
-      imgUrl: `/static/image/r_1.jpg`,
+      imgUrl: `/static/image/w_1.jpg`,
       title: '深圳野生动物园',
       desc: '这里有优雅和呆萌并存的睫毛精'
     }]
@@ -51,38 +45,27 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl'
-    .recommend-title
+    .title
       margin-top .2rem
       line-height .8rem
       background #eee
       text-indent .2rem
-    .item
+    .item-img-.item-img-wrapper
+      height 0
       overflow hidden
-      display flex
-      height 1.9rem
+      padding-bottom 33.9%
       .item-img
-        width 1.7rem
-        height 1.7rem
-        padding .1rem
-      .item-info
-        flex 1
-        pading .1rem
-        min-width 0
-        .item-title
-          line-height .54rem
-          font-size .32rem
-          ellipsis()
-        .item-desc
-          line-height .4rem
-          color #ccc
-          ellipsis()
-        .item-button
-          line-height .44rem
-          margin-top .16rem
-          background #ff9300
-          padding 0 .2rem
-          border-radius .06rem
-          color #fff
+        width 100%
+    .item-info
+      padding: .1rem
+      .item-title
+        line-height .54rem
+        font-size .32rem
+        ellipsis()
+      .item-desc
+        line-height .4rem
+        color #ccc
+        ellipsis()
 </style>
 
 
