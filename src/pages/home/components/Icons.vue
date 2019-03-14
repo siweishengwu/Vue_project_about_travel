@@ -15,69 +15,21 @@
 <script>
 export default {
   name: "HomeIcons",
-  data () {
-    return {
-      iconList: [
-        {
-          id: "0001",
-          imgUrl:
-            `/static/image/i_1.png`,
-          desc: "景点门票"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            `/static/image/i_2.png`,
-          desc: "广州必游"
-        },
-        {
-          id: "0003",
-          imgUrl:
-            `/static/image/i_3.png`,
-          desc: "动植物园"
-        },
-        {
-          id: "0004",
-          imgUrl:
-            `/static/image/i_4.png`,
-          desc: "自然风光"
-        },
-        {
-          id: "0005",
-          imgUrl:
-            `/static/image/i_5.png`,
-          desc: "珠江夜游"
-        },
-        {
-          id: "0006",
-          imgUrl:
-            `/static/image/i_6.png`,
-          desc: "泡温泉"
-        },
-        {
-          id: "0007",
-          imgUrl:
-            `/static/image/i_7.png`,
-          desc: "一日游"
-        },
-        {
-          id: "0008",
-          imgUrl:
-            `/static/image/i_8.png`,
-          desc: "长隆度假区"
-        },
-        {
-          id: "0009",
-          imgUrl:
-            `/static/image/i_9.png`,
-          desc: "广州塔"
-        }]
-    }
+  props : {
+    list : Array
   },
+  // 禁止代码自动移动
+  // data () {
+  //   return { 
+  //   swiperOption : {
+  //     autoplay : false
+  //   }
+  //   }
+  // },
   computed: {
     pages() {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

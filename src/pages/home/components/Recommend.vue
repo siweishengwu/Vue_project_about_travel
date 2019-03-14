@@ -4,7 +4,7 @@
             热销推荐
         </div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key='item.id'>
+            <li class="item border-bottom" v-for="item of list" :key='item.id'>
                   <img class="item-img" :src="item.imgUrl" />
                 <div class="item-info">
                   <p class="item-title">{{item.title}}</p>
@@ -19,30 +19,8 @@
 <script>
 export default {
   name : 'HomeRecommend',
-  data () {
-    return {
-    recommendList: [{
-      id: '0001',
-      imgUrl: `/static/image/r_1.jpg`,
-      title: '深圳野生动物园',
-      desc: '这里有优雅和呆萌并存的睫毛精'
-    },{
-      id: '0002',
-      imgUrl: `/static/image/r_1.jpg`,
-      title: '深圳野生动物园',
-      desc: '这里有优雅和呆萌并存的睫毛精'
-    },{
-      id: '0003',
-      imgUrl: `/static/image/r_1.jpg`,
-      title: '深圳野生动物园',
-      desc: '这里有优雅和呆萌并存的睫毛精'
-    },{
-      id: '0004',
-      imgUrl: `/static/image/r_1.jpg`,
-      title: '深圳野生动物园',
-      desc: '这里有优雅和呆萌并存的睫毛精'
-    }]
-  }
+  props : {
+    list : Array
   }
 }
 </script>
