@@ -47,7 +47,8 @@ export default {
         border-radius .1rem
       .header-right
         text-align:center
-        width:1.24rem
+        padding 0 .1rem
+        min-width:1.04rem
         color #fff
         float:right 
         .arrow-icon
