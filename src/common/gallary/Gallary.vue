@@ -1,46 +1,45 @@
 <template>
-    <div class="container" @click="handleGallaryClick">
-        <div class="wrapper">
-            <swiper :options="swiperOptions">
-               <swiper-slide 
-                    v-for="(item,index) in imgs" 
-                    :key="index"
-               >
-                  <img class="gallary-img" src="/static/image/beijing/d_1.jpg"><img>
-                </swiper-slide>
-             <div class="swiper-pagination"  slot="pagination">
-             </div>
-            </swiper>
-        </div>
+  <div class="container" @click="handleGallaryClick">
+    <div class="wrapper">
+      <swiper :options="swiperOptions">
+        <swiper-slide
+          v-for="(item, index) in imgs"
+          :key="index"
+        >
+          <img class="gallary-img" :src="item" />
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'CommonGallary',
-    props: {
-        imgs: {
-            type: Array,
-            default () {
-                return []
-            }
-        }
-    },
-    data () {
-        return {
-        swiperOptions: {
-            pagination: '.swiper-pagination',
-            paginationType: 'fraction',
-            observeParents: true,
-            observer: true
-        }
-      }
-    },
-    methods: {
-      handeleGallaryClick () {
-        this.$$emit('close')
+  name: 'CommonGallary',
+  props: {
+    imgs: {
+      type: Array,
+      default () {
+        return []
       }
     }
+  },
+  data () {
+    return {
+      swiperOptions: {
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction',
+        observeParents: true,
+        observer: true
+      }
+    }
+  },
+  methods: {
+    handleGallaryClick () {
+      this.$emit('close')
+    }
+  }
 }
 </script>
 
@@ -68,5 +67,3 @@ export default {
         color: #fff
         bottom: -1rem
 </style>
-
-

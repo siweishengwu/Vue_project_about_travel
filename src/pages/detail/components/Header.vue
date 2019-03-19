@@ -22,32 +22,34 @@
 
 <script>
 export default {
-    name: 'DetailHeader',
-    data () {
-        return {
-            showAbs:true,
-            opacityStyle: {
-                opacity: 0
-            }
-        }
-    },
-    methods: {
-        handleScroll () {
-            const top = document.documentElement.scrollTop
-            if ( top > 60 ) {
-                let opacity = top / 140
-                opacity = opacity > 1 ? 1: opacity
-                this.opacityStyle = { opacity }
-                this.showAbs = false
-            } else {
-                 this.showAbs = true
-            }
-            console.log(document.documentElement.scrollTop)
-        }
-    },
-    activated () {
-        window.addEventListener('scroll',this.handleScroll)
+  name: 'DetailHeader',
+  data () {
+    return {
+      showAbs: true,
+      opacityStyle: {
+        opacity: 0
+      }
     }
+  },
+  methods: {
+    handleScroll () {
+      const top = document.documentElement.scrollTop
+      if (top > 60) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = { opacity }
+        this.showAbs = false
+      } else {
+        this.showAbs = true
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 }
 </script>
 
@@ -87,6 +89,3 @@ export default {
       font-size: .4rem
       color: #fff
 </style>
-
-
-

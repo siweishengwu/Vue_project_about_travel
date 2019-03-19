@@ -1,45 +1,54 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-        <img class="banner-img" src="/static/image/beijing/d_1.jpg">
-        <div class="banner-info">
-            <div class="banner-tittle">666666</div>
-            <div class="banner-number">
-                <span class="iconfont">
-                    &#xe692;
-                </span>
-                39
-            </div>
+      <img class="banner-img" :src="bannerImg" />
+      <div class="banner-info">
+        <div class="banner-tittle">
+          {{this.sightName}}
         </div>
+        <div class="banner-number">
+          <span class="iconfont banner-icon">&#xe692;</span>
+          {{this.bannerImgs.length}}
+        </div>
+      </div>
     </div>
-    <common-gallary 
-    :imgs="imgs"
-    v-show="showGallary"
-    @close="handleGallaryClose" 
-    >
-    </common-gallary>
+    <fade-animation>
+      <common-gallary
+        :imgs="bannerImgs"
+        v-show="showGallary"
+        @close="handleGallaryClose"
+      ></common-gallary>
+    </fade-animation>
   </div>
 </template>
 
 <script>
-import CommonGallery from 'common/gallary/Gallary'
+import CommonGallary from 'common/gallary/Gallary'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
-    name: 'DetailBanner',
-    data () {
-       return {
-           showGallary: false,
-           img: []
-       }
+  name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
+  data () {
+    return {
+      showGallary: false
+    }
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallary = true
     },
-    methods: {
-        handleBannerClick () {
-            this.showGallary = true
-        },
-        handleGallaryClose () {
-            this.showGallary = false
-        }
-    },
-    CommonGallery
+    handleGallaryClose () {
+      this.showGallary = false
+    }
+  },
+  components: {
+    CommonGallary,
+    FadeAnimation
+  }
 }
 </script>
 
